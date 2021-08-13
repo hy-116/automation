@@ -33,10 +33,18 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted () {
+    axios.get('/api', {
+      params: {}
+    }).then(res => {
+      console.log(res)
+    })
   }
 }
 </script>
